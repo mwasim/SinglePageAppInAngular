@@ -1,0 +1,17 @@
+﻿<div data-ng-controller="ListController">
+    <h1>Products</h1>
+    <table class="table table-bordered table-striped" style="width: 30%">
+        <tr>
+            <th>Name</th>
+            <th class="text-center">Details</th>
+        </tr>
+        <tr data-ng-repeat="product in products">
+            <td>{{product.Name}}</td>
+            <td class="text-center">
+                <a href="#details/{{product.Id}}" class="btn btn-default">Details</a>
+                &nbsp;
+                <button class="btn btn-default" ng-click="delete(product)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
