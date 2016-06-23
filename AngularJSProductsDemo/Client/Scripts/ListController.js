@@ -7,11 +7,14 @@
                 $scope.products = data;
             });
 
-        $scope.delete = function (product) {
-            productService.delete(product)
-            .success(function () {
-                removeProductById(product.Id);
-            });
+        $scope.create = function () {
+            $scope.edit = {
+                product: {
+                    Name: "",
+                    Description: "",
+                    //Price: 0
+                }
+            };
         };
 
         var removeProductById = function (id) {
@@ -22,6 +25,14 @@
                 }
             }
         };
+
+        $scope.delete = function (product) {
+            productService.delete(product)
+            .success(function () {
+                removeProductById(product.Id);
+            });
+        };
+
     };
 
     app.controller("ListController", ListController);

@@ -1,0 +1,20 @@
+﻿<div data-ng-controller="EditController">
+    <form ng-show="isEditable()">
+        <fieldset>
+            <div class="form-group">
+                <label for="title">Name</label>
+                <input type="text" id="title" ng-model="edit.product.Name" required class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" id="price" ng-model="edit.product.Price" required class="form-control" max="5" placeholder="00.00" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="5" ng-model="edit.product.Description" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-default" ng-click="save()">Save</button>
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </fieldset>
+    </form>
+</div>
